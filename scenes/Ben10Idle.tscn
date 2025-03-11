@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://doe885pw5j8ml"]
+[gd_scene load_steps=8 format=3 uid="uid://doe885pw5j8ml"]
 
 [ext_resource type="Texture2D" uid="uid://dvmrynorye2s8" path="res://assets/brackeys_platformer_assets/sprites/Ben10WatchIdle.png" id="1_l47x6"]
 
@@ -38,6 +38,9 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckc8x"]
+size = Vector2(7, 27)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -45,4 +48,8 @@ position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_0a3uy")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.383325
+frame_progress = 0.467945
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -13.5)
+shape = SubResource("RectangleShape2D_ckc8x")
