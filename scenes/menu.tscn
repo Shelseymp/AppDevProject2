@@ -1,7 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dswrvoa3bgmgk"]
+[gd_scene load_steps=13 format=3 uid="uid://dswrvoa3bgmgk"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_hkcjq"]
 [ext_resource type="FontFile" uid="uid://xoyxu5ydbrn8" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_0gj7r"]
+[ext_resource type="Texture2D" uid="uid://3221bhmf12o6" path="res://assets/brackeys_platformer_assets/OIP (14).jpg" id="2_jghuc"]
+[ext_resource type="FontFile" uid="uid://be374dktuclmr" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="3_m8wvm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxgpt"]
+texture = ExtResource("2_jghuc")
+modulate_color = Color(0.8648, 0.892373, 0.94, 0.2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwkxg"]
 bg_color = Color(0, 0.26, 0.0563333, 1)
@@ -92,6 +98,31 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hkcjq")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_yxgpt")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -248.0
+offset_top = 137.0
+offset_right = 248.0
+offset_bottom = 211.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_m8wvm")
+theme_override_font_sizes/font_size = 80
+text = "BEN 10"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
