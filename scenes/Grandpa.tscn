@@ -1,7 +1,13 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=6 format=3 uid="uid://wr70eugrb4pc"]
 
 [ext_resource type="Texture2D" uid="uid://c0kmrbnevthln" path="res://assets/brackeys_platformer_assets/sprites/Grandpa.png" id="1_d87ll"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://cs8j8ydd0gej0"]
+
+[ext_resource type="Texture2D" path="res://assets/brackeys_platformer_assets/sprites/Grandpa.png" id="1_d87ll"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=6 format=3 uid="uid://cs8j8ydd0gej0"]
 
