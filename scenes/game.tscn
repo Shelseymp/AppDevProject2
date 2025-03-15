@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bhm68yghwues3" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_xn4oo"]
 [ext_resource type="PackedScene" uid="uid://doe885pw5j8ml" path="res://scenes/Ben10Idle.tscn" id="2_0tb7v"]
 [ext_resource type="Script" path="res://scripts/ben_10_idle.gd" id="3_8hifs"]
-[ext_resource type="PackedScene" uid="uid://wr70eugrb4pc" path="res://scenes/Grandpa.tscn" id="4_jun26"]
+[ext_resource type="PackedScene" uid="uid://cs8j8ydd0gej0" path="res://scenes/Grandpa.tscn" id="4_jun26"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_72fex"]
 texture = ExtResource("1_xn4oo")

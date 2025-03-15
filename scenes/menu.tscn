@@ -1,8 +1,16 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=3 uid="uid://dswrvoa3bgmgk"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_hkcjq"]
 [ext_resource type="FontFile" uid="uid://xoyxu5ydbrn8" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_0gj7r"]
 [ext_resource type="Texture2D" uid="uid://3221bhmf12o6" path="res://assets/brackeys_platformer_assets/OIP (14).jpg" id="2_jghuc"]
+=======
+[gd_scene load_steps=13 format=3 uid="uid://biyg7ymu1j8b1"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_hkcjq"]
+[ext_resource type="FontFile" uid="uid://xoyxu5ydbrn8" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_0gj7r"]
+[ext_resource type="Texture2D" path="res://assets/brackeys_platformer_assets/OIP (14).jpg" id="2_jghuc"]
+>>>>>>> Stashed changes
 [ext_resource type="FontFile" uid="uid://be374dktuclmr" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="3_m8wvm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yxgpt"]
