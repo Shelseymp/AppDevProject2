@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://7nw5hnchp85q"]
+[gd_scene load_steps=7 format=3 uid="uid://7nw5hnchp85q"]
 
 [ext_resource type="Texture2D" uid="uid://cr7eui0gq3j5c" path="res://assets/brackeys_platformer_assets/sprites/Vilgax Idle.png" id="1_w2lj6"]
 
@@ -38,14 +38,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qoon"]
-size = Vector2(30, 32)
-
 [node name="Viligax" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1td7")
 autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
-shape = SubResource("RectangleShape2D_4qoon")
+frame_progress = 0.993802
