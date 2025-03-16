@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://njqfqoyvc7x6"]
+[gd_scene load_steps=5 format=4 uid="uid://njqfqoyvc7x6"]
 
 [ext_resource type="Texture2D" uid="uid://bhm68yghwues3" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_t53k1"]
-[ext_resource type="PackedScene" uid="uid://dd3owp011q034" path="res://scenes/viligax_battle.tscn" id="3_iquxv"]
 [ext_resource type="PackedScene" uid="uid://doe885pw5j8ml" path="res://scenes/Ben10Idle.tscn" id="3_ndk2l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yne20"]
@@ -152,6 +151,3 @@ position = Vector2(-119, 75)
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, 25)
 zoom = Vector2(4, 4)
-
-[node name="ViligaxBattle" parent="." instance=ExtResource("3_iquxv")]
-position = Vector2(81, 64)
