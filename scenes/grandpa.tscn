@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cufy74glo74oi"]
+[gd_scene load_steps=6 format=3 uid="uid://cufy74glo74oi"]
 
 [ext_resource type="Texture2D" uid="uid://c0kmrbnevthln" path="res://assets/brackeys_platformer_assets/sprites/Grandpa.png" id="1_32gas"]
 
@@ -24,9 +24,16 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0poa7"]
+size = Vector2(17, 32)
+
 [node name="Grandpa" type="Area2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jmhqt")
 autoplay = "default"
-frame_progress = 0.24147
+frame_progress = 0.76822
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_0poa7")
