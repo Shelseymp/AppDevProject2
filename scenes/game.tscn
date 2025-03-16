@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://doe885pw5j8ml" path="res://scenes/Ben10Idle.tscn" id="4_jun26"]
 [ext_resource type="PackedScene" uid="uid://cufy74glo74oi" path="res://scenes/grandpa.tscn" id="5_obpej"]
 [ext_resource type="PackedScene" uid="uid://7nw5hnchp85q" path="res://scenes/viligax.tscn" id="6_n5tkc"]
-[ext_resource type="PackedScene" uid="uid://dv3ugg8xrcvjk" path="res://scenes/kill_zone.tscn" id="7_6avwm"]
+[ext_resource type="PackedScene" uid="uid://dv3ugg8xrcvjk" path="res://scenes/BattleTP.tscn" id="7_6avwm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvkpr"]
 texture = ExtResource("3_7vaps")
@@ -385,7 +385,7 @@ limit_smoothed = true
 position = Vector2(-150, 0)
 
 [node name="Viligax" parent="." instance=ExtResource("6_n5tkc")]
-position = Vector2(957, 16)
+position = Vector2(992, 16)
 
 [node name="SendAttack" parent="Viligax" instance=ExtResource("7_6avwm")]
 position = Vector2(18, -5)
