@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cufy74glo74oi"]
+
+[ext_resource type="Texture2D" uid="uid://c0kmrbnevthln" path="res://assets/brackeys_platformer_assets/sprites/Grandpa.png" id="1_32gas"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfhb6"]
+atlas = ExtResource("1_32gas")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58s3c"]
+atlas = ExtResource("1_32gas")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jmhqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfhb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58s3c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Grandpa" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jmhqt")
+autoplay = "default"
+frame_progress = 0.24147
