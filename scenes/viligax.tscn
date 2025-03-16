@@ -80,7 +80,7 @@ script = ExtResource("1_fp7vt")
 sprite_frames = SubResource("SpriteFrames_p1td7")
 animation = &"moving"
 autoplay = "moving"
-frame_progress = 0.132289
+frame_progress = 0.585209
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 target_position = Vector2(20, 7)
