@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4opu08qxbv04"
-path="res://.godot/imported/OIP (14).jpg-d0b5b4f639bb56bf33751ab4c533106c.ctex"
+uid="uid://dsgr4qe4e4cmp"
+path="res://.godot/imported/vilgax-right.png-3c4bc70aef946c2eceefc6006c804a53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/OIP (14).jpg"
-dest_files=["res://.godot/imported/OIP (14).jpg-d0b5b4f639bb56bf33751ab4c533106c.ctex"]
+source_file="res://assets/brackeys_platformer_assets/sprites/vilgax-right.png"
+dest_files=["res://.godot/imported/vilgax-right.png-3c4bc70aef946c2eceefc6006c804a53.ctex"]
 
 [params]
 

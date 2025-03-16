@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cufy74glo74oi"]
+[gd_scene load_steps=7 format=3 uid="uid://cufy74glo74oi"]
 
 [ext_resource type="Texture2D" uid="uid://c0kmrbnevthln" path="res://assets/brackeys_platformer_assets/sprites/Grandpa.png" id="1_32gas"]
+[ext_resource type="Script" path="res://scripts/grandpa.gd" id="1_hvv62"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfhb6"]
 atlas = ExtResource("1_32gas")
@@ -28,11 +29,12 @@ animations = [{
 size = Vector2(17, 32)
 
 [node name="Grandpa" type="Area2D"]
+script = ExtResource("1_hvv62")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jmhqt")
 autoplay = "default"
-frame_progress = 0.76822
+frame_progress = 0.505838
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
