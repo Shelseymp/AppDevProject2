@@ -77,5 +77,15 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_f8qvg")
 text = "Load"
 
+[node name="Label" type="Label" parent="Load"]
+layout_mode = 0
+offset_left = -313.0
+offset_top = -185.0
+offset_right = 127.0
+offset_bottom = -75.0
+theme_override_fonts/font = ExtResource("3_3fun5")
+theme_override_font_sizes/font_size = 80
+text = "BEN 10"
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
