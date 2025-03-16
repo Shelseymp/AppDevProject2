@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://7nw5hnchp85q"]
+[gd_scene load_steps=8 format=3 uid="uid://7nw5hnchp85q"]
 
+[ext_resource type="Script" path="res://scripts/viligax.gd" id="1_fp7vt"]
 [ext_resource type="Texture2D" uid="uid://cr7eui0gq3j5c" path="res://assets/brackeys_platformer_assets/sprites/Vilgax Idle.png" id="1_w2lj6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7fxk"]
@@ -39,8 +40,9 @@ animations = [{
 }]
 
 [node name="Viligax" type="Node2D"]
+script = ExtResource("1_fp7vt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1td7")
 autoplay = "default"
-frame_progress = 0.993802
+frame_progress = 0.35891

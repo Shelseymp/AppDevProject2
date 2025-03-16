@@ -1,10 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dv3ugg8xrcvjk"]
 
-[ext_resource type="Script" path="res://scripts/SendAttack.gd" id="1_ukjnx"]
+[ext_resource type="Script" path="res://scripts/battleTP.gd" id="1_ukjnx"]
 
-[node name="SendAttack" type="Area2D"]
-collision_mask = 2
+[node name="BattleTP" type="Area2D"]
 script = ExtResource("1_ukjnx")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
