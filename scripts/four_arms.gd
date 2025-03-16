@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-
-const SPEED = 200.0
-const JUMP_VELOCITY = -200.0
-
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+const SPEED = 100.0
+const JUMP_VELOCITY = -300.0
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.  -1 0 1
+	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("moveLeft", "moveRight")
 	
 	if direction > 0:
@@ -27,7 +27,6 @@ func _physics_process(delta: float) -> void:
 		
 	if direction == 0:
 		animated_sprite_2d.play("idle")
-	
 	
 	if direction:
 		velocity.x = direction * SPEED
