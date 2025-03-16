@@ -15,6 +15,7 @@ texture = ExtResource("1_t53k1")
 6:0/0 = 0
 7:0/0 = 0
 8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:0/0 = 0
 10:0/0 = 0
 11:0/0 = 0
@@ -27,6 +28,7 @@ texture = ExtResource("1_t53k1")
 6:1/0 = 0
 7:1/0 = 0
 8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:1/0 = 0
 10:1/0 = 0
 11:1/0 = 0
@@ -135,6 +137,7 @@ texture = ExtResource("1_t53k1")
 3:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ndeag"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_yne20")
 
 [node name="Battle_Screen" type="Node2D"]
@@ -154,4 +157,4 @@ limit_right = 700
 limit_bottom = 90
 
 [node name="Viligax" parent="." instance=ExtResource("4_30vrx")]
-position = Vector2(115, 59)
+position = Vector2(111, 64)
