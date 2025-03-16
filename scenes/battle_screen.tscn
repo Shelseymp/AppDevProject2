@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=4 uid="uid://njqfqoyvc7x6"]
 
 [ext_resource type="Texture2D" uid="uid://bhm68yghwues3" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_t53k1"]
+[ext_resource type="PackedScene" uid="uid://dd3owp011q034" path="res://scenes/viligax_battle.tscn" id="3_iquxv"]
 [ext_resource type="PackedScene" uid="uid://doe885pw5j8ml" path="res://scenes/Ben10Idle.tscn" id="3_ndk2l"]
-[ext_resource type="PackedScene" uid="uid://7nw5hnchp85q" path="res://scenes/viligax.tscn" id="4_30vrx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yne20"]
 texture = ExtResource("1_t53k1")
@@ -147,11 +147,11 @@ tile_map_data = PackedByteArray("AAD8/wUAAAAIAAAAAAD8/wYAAAAIAAAAAAD8/wcAAAAIAAA
 tile_set = SubResource("TileSet_ndeag")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_ndk2l")]
-position = Vector2(-142, 58)
-
-[node name="Viligax" parent="." instance=ExtResource("4_30vrx")]
-position = Vector2(121, 64)
+position = Vector2(-119, 75)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, 25)
 zoom = Vector2(4, 4)
+
+[node name="ViligaxBattle" parent="." instance=ExtResource("3_iquxv")]
+position = Vector2(81, 64)
