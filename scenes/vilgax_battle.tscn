@@ -9,6 +9,11 @@ size = Vector2(24, 32)
 [node name="VilgaxBattle" instance=ExtResource("1_kvtgq")]
 script = ExtResource("2_rjqsa")
 
+[node name="AnimatedSprite2D" parent="." index="0"]
+autoplay = "defaultLeft"
+frame = 1
+frame_progress = 0.634677
+
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_yju8d")
