@@ -1,3 +1,5 @@
+class_name PlayerEntity
+
 extends CharacterBody2D
 
 

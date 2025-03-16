@@ -84,6 +84,8 @@ frame_progress = 0.138064
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 target_position = Vector2(20, 7)
+collide_with_areas = true
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 target_position = Vector2(-20, 8)
+collide_with_areas = true

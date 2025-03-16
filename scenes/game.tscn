@@ -385,10 +385,12 @@ limit_smoothed = true
 position = Vector2(-150, 0)
 
 [node name="Viligax" parent="." instance=ExtResource("6_n5tkc")]
-position = Vector2(992, 16)
+position = Vector2(201, 0)
 
 [node name="SendAttack" parent="Viligax" instance=ExtResource("7_6avwm")]
 position = Vector2(18, -5)
+collision_layer = 2
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Viligax/SendAttack"]
 position = Vector2(-18, 4.5)

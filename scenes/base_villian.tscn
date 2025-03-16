@@ -95,9 +95,9 @@ rotation = -1.5708
 target_position = Vector2(-9.53674e-07, 20)
 
 [node name="PlayerTrackerPivot" type="Node2D" parent="."]
+position = Vector2(0, -17)
 
 [node name="Player_Track_Raycast" type="RayCast2D" parent="PlayerTrackerPivot"]
-position = Vector2(0, -15)
-target_position = Vector2(-446, 0)
+target_position = Vector2(43, 0)
 
 [node name="Chase_Timer" type="Timer" parent="."]
