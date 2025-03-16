@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://7nw5hnchp85q"]
+[gd_scene load_steps=13 format=3 uid="uid://7nw5hnchp85q"]
 
 [ext_resource type="Script" path="res://scripts/viligax.gd" id="1_fp7vt"]
 [ext_resource type="Texture2D" uid="uid://cr7eui0gq3j5c" path="res://assets/brackeys_platformer_assets/sprites/Vilgax Idle.png" id="1_w2lj6"]
+[ext_resource type="Texture2D" uid="uid://dsgr4qe4e4cmp" path="res://assets/brackeys_platformer_assets/sprites/vilgax-right.png" id="3_7ce7o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7fxk"]
 atlas = ExtResource("1_w2lj6")
@@ -17,6 +18,22 @@ region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v2abt"]
 atlas = ExtResource("1_w2lj6")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t504y"]
+atlas = ExtResource("3_7ce7o")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrphu"]
+atlas = ExtResource("3_7ce7o")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ket"]
+atlas = ExtResource("3_7ce7o")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dku8"]
+atlas = ExtResource("3_7ce7o")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p1td7"]
@@ -37,6 +54,23 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t504y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrphu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ket")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dku8")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 5.0
 }]
 
 [node name="Viligax" type="Node2D"]
@@ -44,5 +78,12 @@ script = ExtResource("1_fp7vt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1td7")
-autoplay = "default"
-frame_progress = 0.35891
+animation = &"moving"
+autoplay = "moving"
+frame_progress = 0.132289
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(20, 7)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-20, 8)

@@ -356,7 +356,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_72fex")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gpwo"]
-size = Vector2(14, 32)
+size = Vector2(14, 31)
 
 [node name="Game" type="Node2D"]
 
@@ -387,10 +387,11 @@ limit_smoothed = true
 position = Vector2(-150, 0)
 
 [node name="Viligax" parent="." instance=ExtResource("6_n5tkc")]
-position = Vector2(352, -16)
+position = Vector2(957, 16)
 
 [node name="SendAttack" parent="Viligax" instance=ExtResource("7_6avwm")]
+position = Vector2(18, -5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Viligax/SendAttack"]
-position = Vector2(0, -1)
+position = Vector2(-18, 4.5)
 shape = SubResource("RectangleShape2D_1gpwo")
