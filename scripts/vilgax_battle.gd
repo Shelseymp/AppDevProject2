@@ -35,7 +35,6 @@ func _ready():
 	chase_timer.timeout.connect(on_timer_timeout)
 	
 func _physics_process(delta):
-	GameManager.apply_gravity(self, delta)
 	handle_vision()
 	track_player()
 	handle_movement()
