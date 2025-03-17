@@ -9,8 +9,6 @@ size = Vector2(24, 32)
 [node name="VilgaxBattle" instance=ExtResource("1_kvtgq")]
 collision_mask = 4
 script = ExtResource("2_rjqsa")
-wander_speed = null
-chase_speed = null
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 autoplay = ""
