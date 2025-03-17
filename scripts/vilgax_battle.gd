@@ -14,8 +14,8 @@ extends CharacterBody2D
 @onready var chase_timer = $Chase_Timer as Timer
 
 
-@export var wander_speed : float = 40
-@export var chase_speed : float = 80.0
+@export var wander_speed : float = 20
+@export var chase_speed : float = 40.0
 
 var current_speed : float = 0.0
 var player_found : bool = false

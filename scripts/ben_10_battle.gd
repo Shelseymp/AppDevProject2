@@ -1,4 +1,4 @@
-class_name PlayerEntity2
+class_name PlayerEntity
 
 extends CharacterBody2D
 
