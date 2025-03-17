@@ -11,10 +11,13 @@ collision_mask = 4
 script = ExtResource("2_rjqsa")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-autoplay = "defaultLeft"
+autoplay = ""
 frame = 1
 frame_progress = 0.634677
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_yju8d")
+
+[node name="Player_Track_Raycast" parent="PlayerTrackerPivot" index="0"]
+collision_mask = 4

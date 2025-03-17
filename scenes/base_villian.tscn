@@ -83,16 +83,15 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="WallCheck" type="Node2D" parent="."]
+position = Vector2(0, -11)
 
 [node name="Wall_RayCast_Left" type="RayCast2D" parent="WallCheck"]
-position = Vector2(0, -11)
 rotation = 1.5708
-target_position = Vector2(9.53674e-07, 20)
+target_position = Vector2(9.44138e-05, 26)
 
 [node name="Wall_RayCast_Right" type="RayCast2D" parent="WallCheck"]
-position = Vector2(0, -11)
 rotation = -1.5708
-target_position = Vector2(-9.53674e-07, 20)
+target_position = Vector2(-0.000101089, 28)
 
 [node name="PlayerTrackerPivot" type="Node2D" parent="."]
 position = Vector2(0, -17)

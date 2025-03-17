@@ -149,9 +149,9 @@ tile_set = SubResource("TileSet_ndeag")
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_ndk2l")]
 position = Vector2(194, 76)
 
+[node name="VilgaxBattle" parent="." instance=ExtResource("3_m5b8k")]
+position = Vector2(14, 78)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, 25)
 zoom = Vector2(4, 4)
-
-[node name="VilgaxBattle" parent="." instance=ExtResource("3_m5b8k")]
-position = Vector2(15, 78)

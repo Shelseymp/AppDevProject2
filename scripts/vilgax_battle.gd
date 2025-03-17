@@ -17,6 +17,8 @@ var current_speed : float = 0.0
 var player_found : bool = false
 var player : PlayerEntity = null 
 
+
+
 enum States{
 	Wander,
 	Chase
@@ -24,26 +26,44 @@ enum States{
 
 var current_State = States.Wander
 
-func _ready() -> void:
+func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	chase_timer.timeout.connect(on_timer_timeout)
-
-func _physics_process(delta: float) -> void:
+	
+func _physics_process(delta):
 	handle_vision()
 	track_player()
+	handle_movement()
+	move_and_slide()
 	pass
 	
 	
+func handle_movement() -> void:
+	var direction = global_position - player.global_position
+	
+	if current_State == States.Wander:
+		print("wander")
+		if wall_ray_cast_right.is_colliding() != true:
+			current_speed = - wander_speed
+			print("right")
+		if wall_ray_cast_left.is_colliding() != true:
+			current_speed = wander_speed
+			print("left")
+			
+	if current_State == States.Chase:
+		if player_found == true:
+			if direction.x < 0:
+				current_speed = chase_speed
+			else:
+				current_speed = -chase_speed
+	velocity.x = current_speed
 	
 func track_player():
 	if player == null:
 		return
-	
 	var direction_to_player: Vector2 = Vector2(player.position.x, player.position.y + 1) - player_track_raycast.position
 	
-	
 	player_tracker_pivot.look_at(direction_to_player)
-	
 	
 func handle_vision():
 	if player_track_raycast.is_colliding():
