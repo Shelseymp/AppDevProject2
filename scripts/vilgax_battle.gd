@@ -147,3 +147,7 @@ func handle_flip():
 func on_timer_timeout() -> void:
 	if player_found == false:
 		current_State = States.Wander
+
+
+#func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
+	#var damage = Global.playerDamageAmount

@@ -13,6 +13,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	if Input.is_action_just_pressed("punch"):
+		set_damage("punch")
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -37,3 +39,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+func set_damage(attack_type):
+	var current_damage_to_deal:int
+	if attack_type == "punch":
+		current_damage_to_deal = 20
+	#Global.playerDamageAmount = current_damage_to_deal
