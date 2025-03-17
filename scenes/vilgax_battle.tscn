@@ -11,10 +11,7 @@ collision_mask = 4
 script = ExtResource("2_rjqsa")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-animation = &"Right"
 autoplay = "Right"
-frame = 2
-frame_progress = 0.951299
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, -16)

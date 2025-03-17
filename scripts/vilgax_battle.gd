@@ -34,7 +34,7 @@ var dealing_damage = 30
 var is_dealing_damage : bool = false
 
 const gravity = 900
-var knockback_force = 200
+var knockback_force = -20
 var is_roaming : bool = false
 
 
@@ -88,12 +88,29 @@ func handle_movement() -> void:
 				current_speed = chase_speed
 			else:
 				current_speed = -chase_speed
+				
 	velocity.x = current_speed
 	
 
 func handle_animation():
 	if !dead and !taking_damage and !is_dealing_damage:
 		handle_movement()
+	elif !dead and taking_damage and !is_dealing_damage:
+		var knockback_dir = position.direction_to(player.position) * knockback_force
+		velocity.x = knockback_dir.x
+		animated_sprite_2d.play("hurt")
+		await get_tree().create_timer(0.8).timeout
+		taking_damage = false
+	elif dead:
+		animated_sprite_2d.play("idle")
+		await get_tree().create_timer(1.).timeout
+		handle_death()
+
+func handle_death():
+	self.queue_free() #dissapears from map
+	#we will add the score and returning to game screen
+	pass
+	
 	
 func track_player():
 	if player == null:
