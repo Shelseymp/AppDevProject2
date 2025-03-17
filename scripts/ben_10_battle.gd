@@ -6,10 +6,19 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 
+@onready var dealing_damage_zone: Area2D = $DealingDamageZone
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+var current_attack: bool = false
+
 
 func _ready():
 	Global.playerBody = self
+	Global.PlayerDamageZone = dealing_damage_zone
+	
+func toggle_damage_collisions():
+	var damage_zone_collision = dealing_damage_zone.get_node("damage")
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -17,7 +26,10 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if Input.is_action_just_pressed("punch"):
+		toggle_damage_collisions()
 		set_damage("punch")
+		
+
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -28,9 +40,12 @@ func _physics_process(delta: float) -> void:
 	
 	if direction > 0:
 		animated_sprite_2d.play("moveRight")
+		dealing_damage_zone.scale.x = 1
+
 		
 	if direction < 0:
 		animated_sprite_2d.play("moveLeft")
+		dealing_damage_zone.scale.x = -1
 		
 	if direction == 0:
 		animated_sprite_2d.play("idle")
@@ -44,8 +59,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func set_damage(attack_type):
-	print("hitting")
+	print("setting damage")
 	var current_damage_to_deal:int
 	if attack_type == "punch":
+		print("punching")
 		current_damage_to_deal = 20
 	Global.playerDamageAmount = current_damage_to_deal

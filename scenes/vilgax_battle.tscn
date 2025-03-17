@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://blnwa6whcdlbf"]
+[gd_scene load_steps=6 format=3 uid="uid://blnwa6whcdlbf"]
 
 [ext_resource type="PackedScene" uid="uid://b85g6674hehlf" path="res://scenes/base_villian.tscn" id="1_kvtgq"]
 [ext_resource type="Script" path="res://scripts/vilgax_battle.gd" id="2_rjqsa"]
@@ -8,6 +8,9 @@ size = Vector2(24, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxupy"]
 size = Vector2(24, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5mo1"]
+size = Vector2(36, 34)
 
 [node name="VilgaxBattle" instance=ExtResource("1_kvtgq")]
 collision_mask = 4
@@ -28,5 +31,9 @@ collision_mask = 4
 [node name="CollisionShape2D" parent="EnemyHitbox" index="0"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_vxupy")
+
+[node name="CollisionShape2D" parent="EnemyDealingDamage" index="0"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_g5mo1")
 
 [connection signal="area_entered" from="EnemyHitbox" to="." method="_on_enemy_hitbox_area_entered"]

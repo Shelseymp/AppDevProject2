@@ -12,6 +12,7 @@ extends CharacterBody2D
 
 @onready var player_track_raycast = $PlayerTrackerPivot/Player_Track_Raycast as RayCast2D
 @onready var player_tracker_pivot = $PlayerTrackerPivot as Node2D
+@onready var enemy_dealing_damage: Area2D = $EnemyDealingDamage
 
 @onready var chase_timer = $Chase_Timer as Timer
 
@@ -55,6 +56,9 @@ func _ready():
 	
 	
 func _physics_process(delta):
+	Global.VilgaxDamageAmount = dealing_damage
+	Global.VilgaxDamageZone = enemy_dealing_damage
+	
 	handle_vision()
 	track_player()
 	#handle_movement()
@@ -69,19 +73,14 @@ func handle_movement() -> void:
 	var direction = global_position - player.global_position
 	
 	if current_State == States.Wander:
-		print("wander")
 		if floor_ray_cast_right.is_colliding() != true:
 			current_speed = - wander_speed
-			print("right floor")
 		if floor_ray_cast_left.is_colliding() != true:
 			current_speed = wander_speed
-			print("left floor")
 		if wall_ray_cast_right.is_colliding():
 			current_speed = - wander_speed
-			print("right")
 		if wall_ray_cast_left.is_colliding():
 			current_speed = wander_speed
-			print("left")
 			
 	if current_State == States.Chase:
 		if player_found == true:
@@ -152,3 +151,15 @@ func on_timer_timeout() -> void:
 
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 	var damage = Global.playerDamageAmount
+	if area == Global.PlayerDamageZone:
+		take_damage(damage)
+	print("Damage")
+	
+func take_damage(damage):
+	health -= damage
+	taking_damage = true
+	if health <= min_health:
+		health = min_health
+		dead = true
+	print("Vilgax current health is " , health)
+		
