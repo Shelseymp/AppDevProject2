@@ -17,8 +17,16 @@ func _ready():
 	Global.playerBody = self
 	Global.PlayerDamageZone = dealing_damage_zone
 	
+	
 func toggle_damage_collisions():
+	print("Toggle on and off")
 	var damage_zone_collision = dealing_damage_zone.get_node("damage")
+	damage_zone_collision.disabled = false
+	
+	await get_tree().create_timer(0.4).timeout
+	damage_zone_collision.disabled = true
+
+
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
