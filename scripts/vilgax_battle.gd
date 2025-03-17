@@ -35,6 +35,7 @@ var is_dealing_damage : bool = false
 
 const gravity = 900
 var knockback_force = 200
+var is_roaming : bool = false
 
 
 
@@ -55,39 +56,46 @@ func _ready():
 func _physics_process(delta):
 	handle_vision()
 	track_player()
-	handle_movement()
+	#handle_movement()
+	handle_animation()
 	move_and_slide()
 	handle_flip()
 	pass
 	
 	
 func handle_movement() -> void:
-	var direction = global_position - player.global_position
 	
-	if current_State == States.Wander:
-		print("wander")
-		if floor_ray_cast_right.is_colliding() != true:
-			current_speed = - wander_speed
-			print("right floor")
-		if floor_ray_cast_left.is_colliding() != true:
-			current_speed = wander_speed
-			print("left floor")
-		if wall_ray_cast_right.is_colliding():
-			current_speed = - wander_speed
-			print("right")
-		if wall_ray_cast_left.is_colliding():
-			current_speed = wander_speed
-			print("left")
+	if !dead and !taking_damage and !is_dealing_damage:
+		var direction = global_position - player.global_position
+	
+		if current_State == States.Wander:
+			print("wander")
+			if floor_ray_cast_right.is_colliding() != true:
+				current_speed = - wander_speed
+				print("right floor")
+			if floor_ray_cast_left.is_colliding() != true:
+				current_speed = wander_speed
+				print("left floor")
+			if wall_ray_cast_right.is_colliding():
+				current_speed = - wander_speed
+				print("right")
+			if wall_ray_cast_left.is_colliding():
+				current_speed = wander_speed
+				print("left")
 			
-			
-			
-	if current_State == States.Chase:
-		if player_found == true:
-			if direction.x < 0:
-				current_speed = chase_speed
-			else:
-				current_speed = -chase_speed
-	velocity.x = current_speed
+		if current_State == States.Chase:
+			if player_found == true:
+				if direction.x < 0:
+					current_speed = chase_speed
+				else:
+					current_speed = -chase_speed
+		velocity.x = current_speed
+	
+		
+	
+func handle_animation():
+	if !dead and !taking_damage and !is_dealing_damage:
+		handle_movement()
 	
 func track_player():
 	if player == null:
