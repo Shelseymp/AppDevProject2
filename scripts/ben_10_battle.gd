@@ -8,6 +8,9 @@ const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+func _ready():
+	Global.playerBody = self
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -41,7 +44,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func set_damage(attack_type):
+	print("hitting")
 	var current_damage_to_deal:int
 	if attack_type == "punch":
 		current_damage_to_deal = 20
-	#Global.playerDamageAmount = current_damage_to_deal
+	Global.playerDamageAmount = current_damage_to_deal

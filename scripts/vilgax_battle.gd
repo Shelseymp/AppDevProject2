@@ -53,6 +53,7 @@ func _ready():
 	player = get_tree().get_first_node_in_group("player")
 	chase_timer.timeout.connect(on_timer_timeout)
 	
+	
 func _physics_process(delta):
 	handle_vision()
 	track_player()
@@ -149,5 +150,5 @@ func on_timer_timeout() -> void:
 		current_State = States.Wander
 
 
-#func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
-	#var damage = Global.playerDamageAmount
+func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
+	var damage = Global.playerDamageAmount
