@@ -1,6 +1,8 @@
 class_name Vilgax
 extends CharacterBody2D
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 @onready var wall_ray_cast_left = $WallCheck/Wall_RayCast_Left as RayCast2D 
 @onready var wall_ray_cast_right = $WallCheck/Wall_RayCast_Right as RayCast2D 
 
@@ -39,6 +41,7 @@ func _physics_process(delta):
 	track_player()
 	handle_movement()
 	move_and_slide()
+	handle_flip()
 	pass
 	
 	
@@ -91,6 +94,17 @@ func handle_vision():
 		player_found = false
 		
 	
+func handle_flip():
+	var velocity_sign = sign(velocity.x)
+	
+	if velocity_sign < 0:
+		animated_sprite_2d.play("defaultLeft")
+		
+	if velocity_sign > 0:
+		animated_sprite_2d.play("Right")
+		
+		
+
 func on_timer_timeout() -> void:
 	if player_found == false:
 		current_State = States.Wander
