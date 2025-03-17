@@ -20,4 +20,5 @@ position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_yju8d")
 
 [node name="Player_Track_Raycast" parent="PlayerTrackerPivot" index="0"]
+target_position = Vector2(118, 0)
 collision_mask = 4

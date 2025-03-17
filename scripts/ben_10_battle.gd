@@ -1,10 +1,10 @@
-class_name PlayerEntity
+class_name PlayerEntity2
 
 extends CharacterBody2D
 
 
 const SPEED = 100.0
-const JUMP_VELOCITY = -250.0
+const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
