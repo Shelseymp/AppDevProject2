@@ -24,6 +24,22 @@ var player_found : bool = false
 var player : PlayerEntity = null 
 
 
+var health = 100
+var max_health = 80
+var min_health = 0
+
+var dead : bool = false
+var taking_damage: bool = false
+var dealing_damage = 30
+var is_dealing_damage : bool = false
+
+const gravity = 900
+var knockback_force = 200
+
+
+
+
+
 
 enum States{
 	Wander,
