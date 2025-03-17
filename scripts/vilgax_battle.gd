@@ -4,6 +4,10 @@ extends CharacterBody2D
 @onready var wall_ray_cast_left = $WallCheck/Wall_RayCast_Left as RayCast2D 
 @onready var wall_ray_cast_right = $WallCheck/Wall_RayCast_Right as RayCast2D 
 
+@onready var floor_ray_cast_left = $FloorCheck/Floor_RayCast_left as RayCast2D
+@onready var floor_ray_cast_right = $FloorCheck/Floor_RayCast_right as RayCast2D
+
+
 @onready var player_track_raycast = $PlayerTrackerPivot/Player_Track_Raycast as RayCast2D
 @onready var player_tracker_pivot = $PlayerTrackerPivot as Node2D
 
@@ -43,12 +47,20 @@ func handle_movement() -> void:
 	
 	if current_State == States.Wander:
 		print("wander")
-		if wall_ray_cast_right.is_colliding() != true:
+		if floor_ray_cast_right.is_colliding() != true:
+			current_speed = - wander_speed
+			print("right floor")
+		if floor_ray_cast_left.is_colliding() != true:
+			current_speed = wander_speed
+			print("left floor")
+		if wall_ray_cast_right.is_colliding():
 			current_speed = - wander_speed
 			print("right")
-		if wall_ray_cast_left.is_colliding() != true:
+		if wall_ray_cast_left.is_colliding():
 			current_speed = wander_speed
 			print("left")
+			
+			
 			
 	if current_State == States.Chase:
 		if player_found == true:

@@ -99,4 +99,14 @@ position = Vector2(0, -17)
 [node name="Player_Track_Raycast" type="RayCast2D" parent="PlayerTrackerPivot"]
 target_position = Vector2(43, 0)
 
+[node name="FloorCheck" type="Node2D" parent="."]
+
+[node name="Floor_RayCast_left" type="RayCast2D" parent="FloorCheck"]
+position = Vector2(-7, -17)
+target_position = Vector2(0, 23)
+
+[node name="Floor_RayCast_right" type="RayCast2D" parent="FloorCheck"]
+position = Vector2(8, -17)
+target_position = Vector2(0, 23)
+
 [node name="Chase_Timer" type="Timer" parent="."]
