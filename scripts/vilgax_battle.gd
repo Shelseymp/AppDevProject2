@@ -65,34 +65,32 @@ func _physics_process(delta):
 	
 func handle_movement() -> void:
 	
-	if !dead and !taking_damage and !is_dealing_damage:
-		var direction = global_position - player.global_position
+	var direction = global_position - player.global_position
 	
-		if current_State == States.Wander:
-			print("wander")
-			if floor_ray_cast_right.is_colliding() != true:
-				current_speed = - wander_speed
-				print("right floor")
-			if floor_ray_cast_left.is_colliding() != true:
-				current_speed = wander_speed
-				print("left floor")
-			if wall_ray_cast_right.is_colliding():
-				current_speed = - wander_speed
-				print("right")
-			if wall_ray_cast_left.is_colliding():
-				current_speed = wander_speed
-				print("left")
+	if current_State == States.Wander:
+		print("wander")
+		if floor_ray_cast_right.is_colliding() != true:
+			current_speed = - wander_speed
+			print("right floor")
+		if floor_ray_cast_left.is_colliding() != true:
+			current_speed = wander_speed
+			print("left floor")
+		if wall_ray_cast_right.is_colliding():
+			current_speed = - wander_speed
+			print("right")
+		if wall_ray_cast_left.is_colliding():
+			current_speed = wander_speed
+			print("left")
 			
-		if current_State == States.Chase:
-			if player_found == true:
-				if direction.x < 0:
-					current_speed = chase_speed
-				else:
-					current_speed = -chase_speed
-		velocity.x = current_speed
+	if current_State == States.Chase:
+		if player_found == true:
+			if direction.x < 0:
+				current_speed = chase_speed
+			else:
+				current_speed = -chase_speed
+	velocity.x = current_speed
 	
-		
-	
+
 func handle_animation():
 	if !dead and !taking_damage and !is_dealing_damage:
 		handle_movement()
