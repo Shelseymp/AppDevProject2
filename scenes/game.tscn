@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cas5xwh40bf4k"]
+[gd_scene load_steps=16 format=4 uid="uid://cas5xwh40bf4k"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_mgn82"]
 [ext_resource type="Texture2D" uid="uid://bhm68yghwues3" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_xn4oo"]
@@ -356,23 +356,6 @@ texture = ExtResource("1_xn4oo")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_72fex")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgvsf"]
-bg_color = Color(0.1364, 0.43462, 0.62, 0.745098)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eb606"]
-border_color = Color(0.8, 0.8, 0.8, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bumdv"]
-bg_color = Color(0.4182, 0.665977, 0.82, 0.552941)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1gpwo"]
 size = Vector2(14, 31)
 
@@ -403,21 +386,6 @@ limit_smoothed = true
 
 [node name="Grandpa" parent="." instance=ExtResource("5_obpej")]
 position = Vector2(-150, 0)
-
-[node name="Button" type="Button" parent="Grandpa"]
-offset_left = -16.0
-offset_top = -33.0
-offset_right = 12.0
-offset_bottom = -25.0
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("8_t7xvd")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/hover = SubResource("StyleBoxFlat_bgvsf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eb606")
-theme_override_styles/normal = SubResource("StyleBoxFlat_bumdv")
-text = "Save"
 
 [node name="Viligax" parent="." instance=ExtResource("6_n5tkc")]
 position = Vector2(201, 0)
