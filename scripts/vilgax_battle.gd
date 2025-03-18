@@ -111,6 +111,7 @@ func handle_animation():
 
 func handle_death():
 	Global.Score += 10
+	Global.Defeated1 = true
 	self.queue_free() #dissapears from map
 	#we will add the score and returning to game screen
 	print("The Score is ", Global.Score)
@@ -166,5 +167,6 @@ func take_damage(damage):
 	if health <= min_health:
 		health = min_health
 		dead = true
+		
 	print("Vilgax current health is " , health)
 		

@@ -11,3 +11,6 @@ var playerDamageAmount: int
 
 var VilgaxDamageZone: Area2D
 var VilgaxDamageAmount: int
+
+var Defeated1 : bool = false
+var Defeated2 : bool = false

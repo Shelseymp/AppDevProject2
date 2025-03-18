@@ -66,6 +66,7 @@ func handle_death_animation():
 	await get_tree().create_timer(7).timeout
 	
 	
+	
 func _ready():
 	Global.playerBody = self
 	Global.PlayerDamageZone = dealing_damage_zone

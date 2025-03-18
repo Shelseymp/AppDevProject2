@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ik42b5rmuomv"]
+
+[ext_resource type="PackedScene" uid="uid://b85g6674hehlf" path="res://scenes/base_villian.tscn" id="1_7ob77"]
+
+[node name="Vilgax2" instance=ExtResource("1_7ob77")]
