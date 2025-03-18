@@ -197,9 +197,9 @@ text = "HAHA YOU DIED!"
 [node name="EnemyDied" type="Window" parent="."]
 initial_position = 1
 size = Vector2i(300, 100)
+visible = false
 
 [node name="win" type="Button" parent="EnemyDied"]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
