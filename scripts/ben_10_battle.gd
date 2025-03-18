@@ -6,13 +6,66 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 
+@onready var play_hitbox: Area2D = $PlayHitbox
+
 @onready var dealing_damage_zone: Area2D = $DealingDamageZone
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var current_attack: bool = false
 
+var health = 100
+var max_health = 100
+var min_health = 0
 
+
+var dead : bool = false
+var taking_damage: bool = false
+var dealing_damage = 20
+var is_dealing_damage : bool = false
+
+var can_take_damage:bool = true
+
+
+func check_hitbox():
+	var hitbox_areas = $PlayHitbox.get_overlapping_areas()
+	var damage : int
+	if hitbox_areas:
+		var hitbox = hitbox_areas.front()
+		if hitbox.get_parent() is Vilgax:
+			damage = Global.VilgaxDamageAmount
+			if can_take_damage:
+				take_damage(damage)
+		
+
+func take_damage(damage):
+	if damage != 0:
+		if health > 0:
+			health -= damage
+			print("Player Health: ", health)
+			if health <= 0:
+				health = 0 
+				dead = true
+				Global.Score = 0
+				handle_death_animation()
+			take_damage_cooldown(2.0)
+	else:
+		print("da")
+
+func take_damage_cooldown(wait_time):
+	print("cooldown")
+
+	can_take_damage = false
+	await get_tree().create_timer(wait_time).timeout
+	can_take_damage = true
+	
+	
+func handle_death_animation():
+	Global.playerAlive = false
+	self.queue_free()
+	await get_tree().create_timer(7).timeout
+	
+	
 func _ready():
 	Global.playerBody = self
 	Global.PlayerDamageZone = dealing_damage_zone
@@ -29,6 +82,8 @@ func toggle_damage_collisions():
 
 	
 func _physics_process(delta: float) -> void:
+	check_hitbox()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

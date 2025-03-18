@@ -25,8 +25,8 @@ var player_found : bool = false
 var player : PlayerEntity = null 
 
 
-var health = 100
-var max_health = 80
+var health = 200
+var max_health = 200
 var min_health = 0
 
 var dead : bool = false
@@ -56,16 +56,19 @@ func _ready():
 	
 	
 func _physics_process(delta):
-	Global.VilgaxDamageAmount = dealing_damage
-	Global.VilgaxDamageZone = enemy_dealing_damage
-	
-	handle_vision()
-	track_player()
-	#handle_movement()
-	handle_animation()
-	move_and_slide()
-	handle_flip()
-	pass
+	if Global.playerAlive:
+		Global.VilgaxDamageAmount = dealing_damage
+		Global.VilgaxDamageZone = enemy_dealing_damage
+		
+		handle_vision()
+		track_player()
+		#handle_movement()
+		handle_animation()
+		move_and_slide()
+		handle_flip()
+		
+	else:
+		animated_sprite_2d.play("idle")
 	
 	
 func handle_movement() -> void:
@@ -107,8 +110,10 @@ func handle_animation():
 		handle_death()
 
 func handle_death():
+	Global.Score += 10
 	self.queue_free() #dissapears from map
 	#we will add the score and returning to game screen
+	print("The Score is ", Global.Score)
 	pass
 	
 	

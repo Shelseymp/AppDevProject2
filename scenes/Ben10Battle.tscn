@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dpedm4tueur4s"]
+[gd_scene load_steps=29 format=3 uid="uid://dpedm4tueur4s"]
 
 [ext_resource type="Script" path="res://scripts/ben_10_battle.gd" id="1_id12t"]
 [ext_resource type="Texture2D" uid="uid://dvmrynorye2s8" path="res://assets/brackeys_platformer_assets/sprites/Ben10WatchIdle.png" id="2_dpfne"]
@@ -169,6 +169,9 @@ size = Vector2(11, 27)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4jbj"]
 size = Vector2(14.5, 28)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugmjo"]
+size = Vector2(11, 27)
+
 [node name="Ben10Battle" type="CharacterBody2D" groups=["player"]]
 collision_layer = 6
 script = ExtResource("1_id12t")
@@ -189,3 +192,11 @@ shape = SubResource("RectangleShape2D_ckc8x")
 [node name="damage" type="CollisionShape2D" parent="DealingDamageZone"]
 position = Vector2(10.75, -14)
 shape = SubResource("RectangleShape2D_g4jbj")
+
+[node name="PlayHitbox" type="Area2D" parent="."]
+position = Vector2(0, -13)
+collision_mask = 2
+
+[node name="box" type="CollisionShape2D" parent="PlayHitbox"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_ugmjo")

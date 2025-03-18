@@ -3,7 +3,9 @@ extends Node
 var playerBody : CharacterBody2D
 var playerWeaponsEquip:bool
 
-var playerAlive: bool
+var Score: int = 0
+
+var playerAlive: bool = true
 var PlayerDamageZone: Area2D
 var playerDamageAmount: int
 
