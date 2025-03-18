@@ -4,7 +4,12 @@ extends Node2D
 
 @onready var enemypop = $EnemyDied
 
-
+func _ready() -> void:
+	Global.playerAlive = true
+	Global.Defeated1 = false
+	enemypop.hide()
+	playerpop.hide()
+	
 func _physics_process(delta):
 	WhoDied()
 	print("who")
