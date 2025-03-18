@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cas5xwh40bf4k"]
+[gd_scene load_steps=16 format=4 uid="uid://cas5xwh40bf4k"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_mgn82"]
 [ext_resource type="Texture2D" uid="uid://bhm68yghwues3" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_xn4oo"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cufy74glo74oi" path="res://scenes/grandpa.tscn" id="5_obpej"]
 [ext_resource type="PackedScene" uid="uid://7nw5hnchp85q" path="res://scenes/viligax.tscn" id="6_n5tkc"]
 [ext_resource type="PackedScene" uid="uid://dv3ugg8xrcvjk" path="res://scenes/BattleTP.tscn" id="7_6avwm"]
+[ext_resource type="FontFile" uid="uid://xoyxu5ydbrn8" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="8_t7xvd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvkpr"]
 texture = ExtResource("3_7vaps")
@@ -397,3 +398,14 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Viligax/SendAttack"]
 position = Vector2(-18, 4.5)
 shape = SubResource("RectangleShape2D_1gpwo")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = -234.0
+offset_top = -85.0
+offset_right = -140.0
+offset_bottom = -62.0
+theme_override_fonts/font = ExtResource("8_t7xvd")
+theme_override_font_sizes/font_size = 8
+text = "Your Score is 0"
+vertical_alignment = 1
+autowrap_mode = 2
