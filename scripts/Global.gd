@@ -8,12 +8,12 @@ var playerAlive: bool = true
 # Score System
 var Score: int = 0
 
-<<<<<<< HEAD
-var playerAlive: bool = true
+#<<<<<<< HEAD
+#var playerAlive: bool = true
 var playerDealingDamage: bool = false
-=======
+#=======
 # Player Damage System
->>>>>>> 57f5285154add6ca189f09478f3ed0e77bf652b5
+#>>>>>>> 57f5285154add6ca189f09478f3ed0e77bf652b5
 var PlayerDamageZone: Area2D
 var playerDamageAmount: int = 10
 
