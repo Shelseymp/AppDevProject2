@@ -101,11 +101,11 @@ func handle_animation():
 		
 		handle_movement()
 	if !dead and taking_damage and !is_dealing_damage:
-		#var knockback_dir = position.direction_to(player.position) * knockback_force
-		#velocity.x = knockback_dir.x
+		var knockback_dir = position.direction_to(player.position) * knockback_force
+		velocity.x = knockback_dir.x
 		
-		animated_sprite_2d.play("hurtLeft")
-		await get_tree().create_timer(0.3).timeout
+		#animated_sprite_2d.play("hurtLeft")
+		#await get_tree().create_timer(0.3).timeout
 
 		
 		#await get_tree().create_timer(0.8).timeout
