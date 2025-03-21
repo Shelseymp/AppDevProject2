@@ -114,6 +114,11 @@ func handle_animation():
 		
 		await get_tree().create_timer(0.8).timeout
 		taking_damage = false
+	if !dead and !taking_damage and is_dealing_damage:
+		animated_sprite_2d.play("idle")
+		await get_tree().create_timer(0.8).timeout
+		
+		
 	elif dead:
 		animated_sprite_2d.play("idle")
 		await get_tree().create_timer(1.).timeout
