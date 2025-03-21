@@ -101,14 +101,18 @@ func handle_animation():
 		
 		handle_movement()
 	if !dead and taking_damage and !is_dealing_damage:
+		
 		var knockback_dir = position.direction_to(player.position) * knockback_force
 		velocity.x = knockback_dir.x
 		
-		#animated_sprite_2d.play("hurtLeft")
+		#animated_sprite_2d.play("idle")
+		await get_tree().create_timer(0.8).timeout
+		
+		
 		#await get_tree().create_timer(0.3).timeout
 
 		
-		#await get_tree().create_timer(0.8).timeout
+		await get_tree().create_timer(0.8).timeout
 		taking_damage = false
 	elif dead:
 		animated_sprite_2d.play("idle")
@@ -163,12 +167,15 @@ func on_timer_timeout() -> void:
 
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 	var damage = Global.playerDamageAmount
-	if area == Global.PlayerDamageZone:
-		take_damage(damage)
-	print("Damage")
-	await get_tree().create_timer(0.5).timeout
+	if Global.playerDealingDamage == true:
+		if area == Global.PlayerDamageZone:
+			take_damage(damage)
+		print("Damage")
+		await get_tree().create_timer(0.5).timeout
+	
 	
 func take_damage(damage):
+	
 	health -= damage
 	taking_damage = true
 	if health <= min_health:

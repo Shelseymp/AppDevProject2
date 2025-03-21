@@ -6,6 +6,7 @@ var playerWeaponsEquip:bool
 var Score: int = 0
 
 var playerAlive: bool = true
+var playerDealingDamage: bool = false
 var PlayerDamageZone: Area2D
 var playerDamageAmount: int
 
