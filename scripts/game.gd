@@ -2,12 +2,12 @@ extends Node2D
 
 @onready var score_label: Label = $ScoreLabel
 
-var theScore = Global.Score
+func _ready():
+	update_score()  # Update score when the scene loads
 
-func _physics_process(delta):
-	print(Global.Score)
-	the_score()
-	
-func the_score():
-	score_label.text = "Your score is : " + str(theScore) + " !"
-	
+func _process(delta):
+	if score_label.text != "Your score is : " + str(Global.Score) + " !":
+		update_score()  # Only update if the score changes
+
+func update_score():
+	score_label.text = "Your score is : " + str(Global.Score) + " !"

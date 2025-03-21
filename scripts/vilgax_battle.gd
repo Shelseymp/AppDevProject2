@@ -120,6 +120,8 @@ func handle_death():
 	Global.Defeated1 = true
 	self.queue_free() #dissapears from map
 	#we will add the score and returning to game screen
+	Global.save_score()
+	
 	print("The Score is ", Global.Score)
 	pass
 	
