@@ -8,7 +8,7 @@ var playerAlive: bool = true
 # Score System
 var Score: int = 0
 
-#<<<<<<< HEAD
+#<<<<<<< HEADdaaad
 #var playerAlive: bool = true
 var playerDealingDamage: bool = false
 #=======
