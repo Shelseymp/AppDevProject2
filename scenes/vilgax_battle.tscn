@@ -18,6 +18,7 @@ script = ExtResource("2_rjqsa")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 autoplay = "Right"
+frame_progress = 0.0988071
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, -16)

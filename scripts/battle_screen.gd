@@ -20,7 +20,7 @@ func BattleStart():
 	
 func _physics_process(delta):
 	WhoDied()
-	print("who")
+	#print("who")
 
 	
 func WhoDied():

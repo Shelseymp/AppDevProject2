@@ -77,7 +77,7 @@ func toggle_damage_collisions():
 	var damage_zone_collision = dealing_damage_zone.get_node("damage")
 	damage_zone_collision.disabled = false
 	
-	await get_tree().create_timer(0.4).timeout
+	await get_tree().create_timer(0.2).timeout
 	damage_zone_collision.disabled = true
 
 

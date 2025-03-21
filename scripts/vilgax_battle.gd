@@ -64,7 +64,7 @@ func _physics_process(delta):
 		track_player()
 		#handle_movement()
 		handle_animation()
-		move_and_slide()
+		#move_and_slide()
 		handle_flip()
 		
 	else:
@@ -72,7 +72,7 @@ func _physics_process(delta):
 	
 	
 func handle_movement() -> void:
-	
+	move_and_slide()
 	var direction = global_position - player.global_position
 	
 	if current_State == States.Wander:
@@ -96,13 +96,19 @@ func handle_movement() -> void:
 	
 
 func handle_animation():
+	var velocity_sign = sign(velocity.x)
 	if !dead and !taking_damage and !is_dealing_damage:
+		
 		handle_movement()
-	elif !dead and taking_damage and !is_dealing_damage:
-		var knockback_dir = position.direction_to(player.position) * knockback_force
-		velocity.x = knockback_dir.x
-		animated_sprite_2d.play("hurt")
-		await get_tree().create_timer(0.8).timeout
+	if !dead and taking_damage and !is_dealing_damage:
+		#var knockback_dir = position.direction_to(player.position) * knockback_force
+		#velocity.x = knockback_dir.x
+		
+		animated_sprite_2d.play("hurtLeft")
+		await get_tree().create_timer(0.3).timeout
+
+		
+		#await get_tree().create_timer(0.8).timeout
 		taking_damage = false
 	elif dead:
 		animated_sprite_2d.play("idle")
@@ -160,6 +166,7 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 	if area == Global.PlayerDamageZone:
 		take_damage(damage)
 	print("Damage")
+	await get_tree().create_timer(0.5).timeout
 	
 func take_damage(damage):
 	health -= damage
