@@ -46,6 +46,9 @@ func take_damage(damage):
 			if health <= 0:
 				health = 0 
 				dead = true
+				Global.SavingScore = Global.Score
+				Global.Scoretracker.append(Global.SavingScore)
+				Global.number += 1
 				Global.Score = 0
 				handle_death_animation()
 			take_damage_cooldown(2.0)

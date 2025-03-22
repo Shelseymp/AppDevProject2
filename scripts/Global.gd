@@ -8,6 +8,11 @@ var playerAlive: bool = true
 # Score System
 var Score: int = 0
 
+var SavingScore : int = 0
+var Scoretracker = [1]
+var number : int = 1
+
+		 
 #<<<<<<< HEADdaaad
 #var playerAlive: bool = true
 var playerDealingDamage: bool = false

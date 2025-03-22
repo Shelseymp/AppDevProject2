@@ -409,3 +409,22 @@ theme_override_font_sizes/font_size = 8
 text = "Your Score is 0"
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="ScoreBoard" type="Label" parent="."]
+offset_left = -460.0
+offset_top = -146.0
+offset_right = -389.0
+offset_bottom = -138.0
+theme_override_fonts/font = ExtResource("8_t7xvd")
+theme_override_font_sizes/font_size = 8
+text = "ScoreBoard"
+
+[node name="Scoress" type="Label" parent="ScoreBoard"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 17.0
+offset_right = 62.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("8_t7xvd")
+theme_override_font_sizes/font_size = 8
+text = "x ------ x"
