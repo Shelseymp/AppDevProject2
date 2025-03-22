@@ -3,6 +3,9 @@ extends Node2D
 @onready var playerpop = $PlayerDied
 @onready var battle_text: Label = $BattleText
 
+@onready var player_hit: Label = $PlayerHit
+@onready var enemy_hit: Label = $EnemyHIT
+
 @onready var enemypop = $EnemyDied
 
 func _ready() -> void:
@@ -12,6 +15,9 @@ func _ready() -> void:
 	enemypop.hide()
 	playerpop.hide()
 	
+	player_hit.hide()
+	enemy_hit.hide()
+	
 func BattleStart():
 	await get_tree().create_timer(0.5).timeout
 	battle_text.show()
@@ -20,8 +26,19 @@ func BattleStart():
 	
 func _physics_process(delta):
 	WhoDied()
+	WhosHIT()
 	#print("who")
 
+func WhosHIT():
+	if Global.playerHIT == true:
+		player_hit.show()
+		await get_tree().create_timer(0.5).timeout
+		player_hit.hide()
+		
+	if Global.enemyHIT == true:
+		enemy_hit.show()
+		await get_tree().create_timer(0.5).timeout
+		enemy_hit.hide()
 	
 func WhoDied():
 	if Global.playerAlive == false:

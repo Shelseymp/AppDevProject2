@@ -37,10 +37,17 @@ func check_hitbox():
 			if can_take_damage:
 				take_damage(damage)
 		
-
+func playerHITfunc():
+	print("Hit")
+	Global.playerHIT = true
+	await get_tree().create_timer(1).timeout
+	Global.playerHIT = false
+	
+	
 func take_damage(damage):
 	if damage != 0:
 		if health > 0:
+			playerHITfunc()
 			health -= damage
 			print("Player Health: ", health)
 			if health <= 0:

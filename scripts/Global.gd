@@ -5,6 +5,9 @@ var playerBody: CharacterBody2D
 var playerWeaponsEquip: bool = false
 var playerAlive: bool = true
 
+var playerHIT : bool = false
+var enemyHIT : bool = false
+
 # Score System
 var Score: int = 0
 

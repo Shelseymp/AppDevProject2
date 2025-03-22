@@ -102,20 +102,21 @@ func handle_animation():
 		handle_movement()
 	if !dead and taking_damage and !is_dealing_damage:
 		
-		var knockback_dir = position.direction_to(player.position) * knockback_force
-		velocity.x = knockback_dir.x
+		#var knockback_dir = position.direction_to(player.position) * knockback_force
+		#velocity.x = knockback_dir.x
 		
-		#animated_sprite_2d.play("idle")
+		animated_sprite_2d.play("idle")
+		
 		await get_tree().create_timer(0.8).timeout
 		
 		
 		#await get_tree().create_timer(0.3).timeout
 
-		
-		await get_tree().create_timer(0.8).timeout
+		#await get_tree().create_timer(0.8).timeout
 		taking_damage = false
+		
 	if !dead and !taking_damage and is_dealing_damage:
-		animated_sprite_2d.play("idle")
+		animated_sprite_2d.play("hurtRight")
 		await get_tree().create_timer(0.8).timeout
 		
 		
@@ -180,10 +181,16 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 		print("Damage")
 		await get_tree().create_timer(0.5).timeout
 	
+func enemyHITfunc():
+	print("Hit")
+	Global.enemyHIT = true
+	await get_tree().create_timer(1).timeout
+	Global.enemyHIT = false
 	
 func take_damage(damage):
 	
 	health -= damage
+	enemyHITfunc()
 	taking_damage = true
 	if health <= min_health:
 		health = min_health
