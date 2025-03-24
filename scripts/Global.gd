@@ -54,3 +54,6 @@ func add_score(amount: int):
 func reset_score():
 	Score = 0
 	save_score()
+func track_score():
+	Scoretracker.append(Score)
+	number += 1
