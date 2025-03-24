@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bhm68yghwues3" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_xn4oo"]
 [ext_resource type="Texture2D" uid="uid://brkpckjb7iqn3" path="res://assets/brackeys_platformer_assets/sprites/tilemapben.png" id="3_7vaps"]
 [ext_resource type="PackedScene" uid="uid://doe885pw5j8ml" path="res://scenes/Ben10Idle.tscn" id="4_jun26"]
-[ext_resource type="PackedScene" path="res://scenes/grandpa.tscn" id="5_obpej"]
-[ext_resource type="PackedScene" path="res://scenes/viligax.tscn" id="6_n5tkc"]
-[ext_resource type="PackedScene" path="res://scenes/BattleTP.tscn" id="7_6avwm"]
+[ext_resource type="PackedScene" uid="uid://cufy74glo74oi" path="res://scenes/grandpa.tscn" id="5_obpej"]
+[ext_resource type="PackedScene" uid="uid://7nw5hnchp85q" path="res://scenes/viligax.tscn" id="6_n5tkc"]
+[ext_resource type="PackedScene" uid="uid://dv3ugg8xrcvjk" path="res://scenes/BattleTP.tscn" id="7_6avwm"]
 [ext_resource type="FontFile" uid="uid://xoyxu5ydbrn8" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="8_t7xvd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvkpr"]
