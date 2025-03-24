@@ -54,6 +54,27 @@ func add_score(amount: int):
 func reset_score():
 	Score = 0
 	save_score()
+
+	save_scoreboard()
+const SCOREBOARD_FILE := "user://scoreboard.json"
+
+func save_scoreboard():
+	var file = FileAccess.open(SCOREBOARD_FILE, FileAccess.WRITE)
+	var data = {
+		"scores": Scoretracker
+	}
+	file.store_string(JSON.stringify(data))
+	file.close()
+
+func load_scoreboard():
+	if FileAccess.file_exists(SCOREBOARD_FILE):
+		var file = FileAccess.open(SCOREBOARD_FILE, FileAccess.READ)
+		var data = JSON.parse_string(file.get_as_text())
+		if data and "scores" in data:
+			Scoretracker = data["scores"]
+			number = Scoretracker.size()
+		file.close()
 func track_score():
 	Scoretracker.append(Score)
 	number += 1
+	save_scoreboard()
