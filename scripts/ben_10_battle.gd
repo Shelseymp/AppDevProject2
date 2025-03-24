@@ -74,10 +74,10 @@ func handle_death_animation():
 	self.queue_free()
 	await get_tree().create_timer(7).timeout
 	
-func Animations():
-	if Global.enemyHIT == true:
-		animated_sprite_2d.play("moveRight")
-		await get_tree().create_timer(1.8).timeout
+#func Animations():
+	#if Global.enemyHIT == true:
+		#animated_sprite_2d.play("moveRight")
+		#await get_tree().create_timer(1.8).timeout
 		
 	
 func _ready():
@@ -136,7 +136,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	Animations()
 	move_and_slide()
 	
 func set_damage(attack_type):
