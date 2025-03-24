@@ -160,7 +160,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"moveRight",
-"speed": 9.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckc8x"]
@@ -181,7 +181,7 @@ position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_0a3uy")
 animation = &"moveRight"
 autoplay = "idle"
-frame_progress = 0.26485
+frame_progress = 0.381098
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -13.5)

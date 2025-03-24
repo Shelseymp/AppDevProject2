@@ -64,7 +64,6 @@ func take_damage(damage):
 
 func take_damage_cooldown(wait_time):
 	print("cooldown")
-
 	can_take_damage = false
 	await get_tree().create_timer(wait_time).timeout
 	can_take_damage = true
@@ -75,7 +74,11 @@ func handle_death_animation():
 	self.queue_free()
 	await get_tree().create_timer(7).timeout
 	
-	
+func Animations():
+	if Global.enemyHIT == true:
+		animated_sprite_2d.play("moveRight")
+		await get_tree().create_timer(1.8).timeout
+		
 	
 func _ready():
 	Global.playerBody = self
@@ -105,6 +108,8 @@ func _physics_process(delta: float) -> void:
 		toggle_damage_collisions()
 		set_damage("punch")
 		
+		
+		
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -131,7 +136,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	Animations()
 	move_and_slide()
 	
 func set_damage(attack_type):
