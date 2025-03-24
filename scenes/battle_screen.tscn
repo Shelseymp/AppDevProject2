@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/battle_screen.gd" id="1_qj0g5"]
 [ext_resource type="Texture2D" uid="uid://bhm68yghwues3" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_t53k1"]
-[ext_resource type="PackedScene" uid="uid://dpedm4tueur4s" path="res://scenes/Ben10Battle.tscn" id="3_4qawl"]
-[ext_resource type="PackedScene" uid="uid://blnwa6whcdlbf" path="res://scenes/vilgax_battle.tscn" id="3_m5b8k"]
+[ext_resource type="PackedScene" path="res://scenes/Ben10Battle.tscn" id="3_4qawl"]
+[ext_resource type="PackedScene" path="res://scenes/vilgax_battle.tscn" id="3_m5b8k"]
 [ext_resource type="FontFile" uid="uid://xoyxu5ydbrn8" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="5_4eyfc"]
 [ext_resource type="FontFile" uid="uid://be374dktuclmr" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="5_nir4q"]
 
