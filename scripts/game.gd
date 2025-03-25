@@ -7,6 +7,7 @@ func _ready():
 	update_score()  # Show current score
 	update_scoreboard()  # Show scoreboard on scene load
 
+#updating the Scoreboard
 func update_scoreboard():
 	print("Updating Scoreboard")
 	scoress.text = ""  # Clear any existing text
@@ -23,6 +24,6 @@ func update_scoreboard():
 func _process(delta):
 	if score_label.text != "Your score is : " + str(Global.Score) + " !":
 		update_score()
-
+#updating the score
 func update_score():
 	score_label.text = "Your score is : " + str(Global.Score) + " !"

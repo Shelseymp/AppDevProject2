@@ -28,7 +28,8 @@ func _physics_process(delta):
 	WhoDied()
 	WhosHIT()
 	#print("who")
-
+	
+#Will display whether the player or enemy is hit
 func WhosHIT():
 	if Global.playerHIT == true:
 		player_hit.show()
@@ -39,7 +40,7 @@ func WhosHIT():
 		enemy_hit.show()
 		await get_tree().create_timer(0.5).timeout
 		enemy_hit.hide()
-	
+#deciding what window will show up depending on who dies
 func WhoDied():
 	if Global.playerAlive == false:
 		playerpop.show()
@@ -47,7 +48,7 @@ func WhoDied():
 		enemypop.show()
 	
 
-
+#changing scenes on which window and button is pressed
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 

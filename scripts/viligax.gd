@@ -9,6 +9,8 @@ var direction = 1
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+#Will go left and right once it reaches a wall.
 func _process(delta: float) -> void:
 	if ray_cast_right.is_colliding():
 		direction = -1

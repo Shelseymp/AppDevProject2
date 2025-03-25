@@ -70,7 +70,7 @@ func _physics_process(delta):
 	else:
 		animated_sprite_2d.play("idle")
 	
-	
+#checking if is sees the player or a wall - differentiating the different layers  
 func handle_movement() -> void:
 	move_and_slide()
 	var direction = global_position - player.global_position
@@ -95,6 +95,7 @@ func handle_movement() -> void:
 	velocity.x = current_speed
 	
 
+#handing what animation to play
 func handle_animation():
 	var velocity_sign = sign(velocity.x)
 	if !dead and !taking_damage and !is_dealing_damage:
@@ -125,6 +126,7 @@ func handle_animation():
 		await get_tree().create_timer(1.).timeout
 		handle_death()
 
+#Hnadling the Death of the enemy and adding the score
 func handle_death():
 	Global.Score += 10
 	Global.Defeated1 = true
@@ -136,14 +138,15 @@ func handle_death():
 	print("The Score is ", Global.Score)
 	pass
 	
-	
+#Tracking the player if there is a player to track
 func track_player():
 	if player == null:
 		return
 	var direction_to_player: Vector2 = Vector2(player.position.x, player.position.y + 1) - player_track_raycast.position
 	
 	player_tracker_pivot.look_at(direction_to_player)
-	
+
+#starting the chase stae if player is found
 func handle_vision():
 	if player_track_raycast.is_colliding():
 		var collision_result = player_track_raycast.get_collider()
@@ -157,7 +160,7 @@ func handle_vision():
 	else:
 		player_found = false
 		
-	
+#fliping the animation of the enemy depending on which direction it is going
 func handle_flip():
 	var velocity_sign = sign(velocity.x)
 	
@@ -168,12 +171,12 @@ func handle_flip():
 		animated_sprite_2d.play("Right")
 		
 		
-
+#Chase Time out
 func on_timer_timeout() -> void:
 	if player_found == false:
 		current_State = States.Wander
 
-
+#enemy taking damage
 func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 	var damage = Global.playerDamageAmount
 	if Global.playerDealingDamage == true:
@@ -182,12 +185,14 @@ func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
 		print("Damage")
 		await get_tree().create_timer(0.5).timeout
 	
+#when the enemy gets hit
 func enemyHITfunc():
 	print("Hit")
 	Global.enemyHIT = true
 	await get_tree().create_timer(1).timeout
 	Global.enemyHIT = false
 	
+#enemy taking damage
 func take_damage(damage):
 	
 	health -= damage

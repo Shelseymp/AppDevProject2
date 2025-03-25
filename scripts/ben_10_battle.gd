@@ -131,13 +131,13 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("moveLeft")
 		dealing_damage_zone.scale.x = -1
 	
-	if direction == 0 and Input.is_action_just_pressed("punch"):
-		print("PUNCHING AND STANDING")
-		animated_sprite_2d.play("Attack")
-		await get_tree().create_timer(7.0).timeout
+	#if direction == 0 and Input.is_action_just_pressed("punch"):
+	#	print("PUNCHING AND STANDING")
+	#	animated_sprite_2d.play("Attack")
+	#	await get_tree().create_timer(7.0).timeout
 		
 		
-	if direction == 0 and !Input.is_action_just_pressed("punch"):
+	if direction == 0:
 		print("STANDING")
 		animated_sprite_2d.play("idle")
 		
